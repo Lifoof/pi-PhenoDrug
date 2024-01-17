@@ -19,8 +19,10 @@ The sample data is in the data folder, which contains the CNV, mRNA and RPPA dat
 ```Python
 #### Train
 python train.py --action train_valid --epoch xx --arch xx --encoder xx --batch_size xx --dataset xx --data_path xx
+#### python train.py --action train_valid --epoch 1 --arch Unet++ --encoder xception --attention scse --batch_size 2 --dataset BBBC039 --data_path /data01/lixiao/pre/BBBC039
 #### Predict
 python train.py --action predict --arch xx --encoder xx --attention scse --dataset xx --data_path xx --model_path xx
+####python train.py --action predict --arch Unet++ --encoder xception --attention scse --dataset HCS --data_path /data01/lixiao/pre/hcs --model_path /data01/lixiao/pre/saved_model/Unet++_xception_16_BBBC039_100_scse.pth 
 #### Watershed and extract phenotypic features
 python cal_features.py --data_path xx --out_path xx
 ```
