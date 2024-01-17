@@ -27,5 +27,8 @@ python train.py --action predict --arch xx --encoder xx --attention scse --datas
 python cal_features.py --data_path xx --out_path xx
 ```
 
+## Contact
+For any questions please contact Dr. Xiao Li (Email: lixiaoBioinfo@163.com).
+
 ## License
 MIT License
