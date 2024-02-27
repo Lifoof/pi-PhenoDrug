@@ -14,7 +14,7 @@ The whole workflow is divided into follow steps: <br>
 * Use NUSeg for nucleus semantic segmentation. <br>
 * Use condition erosion and marker based watershed to identify single cell.<br>
 * Extract phenotypic features for each cell using scikit-image. <br>
-The sample data is in the data folder, which contains the CNV, mRNA and RPPA data of BRCA. <br>
+
 ### Command Line Tool
 ```Python
 #### Train
