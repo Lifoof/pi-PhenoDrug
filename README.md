@@ -1,9 +1,9 @@
-# High-content-screening-pipeline
+# π-PhenoDrug
 ## What is it?
-This is an unsupervised activity assessment tool based on cell phenotypes and established an analysis pipeline for single-cell morphological profile data.<br>
+This is a comprehensive deep learning-based pipeline for phenotypic drug activity screening in high content analysis. <br>
 
 ## Requirements 
-MoGCN is a Python scirpt tool, your Python environment need:<br>
+π-PhenoDrug is a Python scirpt tool, your Python environment need:<br>
 Python 3.8 or above <br>
 Pytorch 1.7.0 or above <br>
 scikit-image 0.21.0 or above <br>
