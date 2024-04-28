@@ -411,7 +411,7 @@ if __name__ == '__main__':
     print('**************************')
 
     train_augmentation = Compose([
-        albu.RandomRotate90(),
+        #albu.RandomRotate90(),
         albu.Flip(),
         OneOf([
             albu.HueSaturationValue(),
