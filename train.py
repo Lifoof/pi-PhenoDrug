@@ -135,11 +135,11 @@ def getDataset(args):
             mask_paths = glob(root + '/masks/*')
             train_img_paths, val_img_paths, train_mask_paths, val_mask_paths = \
                 train_test_split(img_paths, mask_paths, test_size=0.2, random_state=41)
-        if args.dataset == 'MoNuSeg':
-            train_img_paths = glob(root + '/train_images/*')
-            train_mask_paths = glob(root + '/train_masks/*')
-            val_img_paths = glob(root + '/test_images/*')
-            val_mask_paths = glob(root + '/train_masks/*')
+        if args.dataset == 'Mydata':
+            img_paths = glob(root + '/images/*')
+            mask_paths = glob(root + '/masks/*')
+            train_img_paths, val_img_paths, train_mask_paths, val_mask_paths = \
+                train_test_split(img_paths, mask_paths, test_size=0.2, random_state=41)
         if args.dataset == 'HCS':
             img_paths = glob(root + '/images/*')
             mask_paths = glob(root + '/masks/*')
