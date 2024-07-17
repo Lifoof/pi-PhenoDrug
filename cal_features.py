@@ -235,8 +235,14 @@ def cal_features(img_paths, mask_paths):
 
         mask_label = skimage.morphology.remove_small_objects(labels, min_size=80)
         mask_label = clear_border(mask_label)
+        labelsrgb = label2rgb(mask_label, bg_label=0)
 
-        save_path = os.path.join(args.out_path, str('watershed1106'), mask_path.split(os.sep)[-1])
+        save_path = os.path.join(args.out_path, str('watershed'), mask_path.split(os.sep)[-1])
+        labelsrgb_bgr = (labelsrgb * 255).astype(np.uint8)
+        labelsrgb_bgr = cv2.cvtColor(labelsrgb_bgr, cv2.COLOR_RGB2BGR)
+        cv2.imwrite(save_path, labelsrgb_bgr)
+        
+        '''
         fig = plt.figure(figsize=(8,8))   #4,4
         plt.axis('off')
         plt.imshow(label2rgb(mask_label))
@@ -244,6 +250,7 @@ def cal_features(img_paths, mask_paths):
         plt.margins(0, 0)
         fig.savefig(save_path, dpi=64) #64
         #plt.show()
+        '''
 
 
         props= regionprops(mask_label, intensity_image = pic)
@@ -383,13 +390,13 @@ if __name__ == '__main__':
 
     if not os.path.exists(args.out_path):
         os.makedirs(args.out_path)
-    if not os.path.exists(os.path.join(args.out_path, str('watershed1106'))):
-        os.makedirs(os.path.join(args.out_path, str('watershed1106')))
-        print(os.path.join(args.out_path, str('watershed1106')))
+    if not os.path.exists(os.path.join(args.out_path, str('watershed'))):
+        os.makedirs(os.path.join(args.out_path, str('watershed')))
+        print(os.path.join(args.out_path, str('watershed')))
 
     img_paths, mask_paths = getData(args)
     features_df = cal_features(img_paths, mask_paths)
     print(features_df)
 
-    dir = os.path.join(args.out_path, 'features-1106.csv')
+    dir = os.path.join(args.out_path, 'features.csv')
     features_df.to_csv(dir, header=True, index=True)
