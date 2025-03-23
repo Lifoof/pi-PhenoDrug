@@ -32,3 +32,6 @@ For any questions please contact Dr. Xiao Li (Email: lixiaoBioinfo@163.com).
 
 ## License
 MIT License
+
+## Citation
+Li X, Ouyang Q, Han M, et al. π‐PhenoDrug: A Comprehensive Deep Learning‐Based Pipeline for Phenotypic Drug Screening in High‐Content Analysis[J]. Advanced Intelligent Systems, 2025: 2400635.
